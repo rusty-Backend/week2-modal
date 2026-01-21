@@ -1,13 +1,13 @@
 # week2-modal
 web-and-hybrid-technologies-in-mobile-programming Week 2
 
-The documentation related to the homework had almost straight on copy-paste code so I tried to play a round it and add some better UX. 
+The documentation example for this homework was almost a direct copy-paste solution, so I tried to work around it and improve the user experience (UX).
 
-Instead of using onPress to open the modal, I replaced it with onLongPress which requires the user to hold button 1 second.
+Instead of using onPress to open the modal, I replaced it with onLongPress, which requires the user to hold the button for 1 second.
 
-Added background dimming effect when modal is opened.
+Added a background dimming effect when the modal is opened.
 
-The dimming looked unnatural when it had 'slide' animation -> changed to 'fade'
+The dimming looked unnatural with the slide animation, so I changed it to fade.
 
-Modified the hardware back button to ask if user wants to continue.
+Modified the hardware back button behavior to ask the user for confirmation before closing the modal.
 
