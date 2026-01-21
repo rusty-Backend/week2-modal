@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Modal, StyleSheet, Text, Pressable, View} from 'react-native';
+import { Alert, Modal, StyleSheet, Text, Pressable, View } from 'react-native';
 
 
 const App = () => {
@@ -11,16 +11,24 @@ const App = () => {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}>
-          
+          Alert.alert(
+            'Hardware back button pressed',
+            'You are about to close the modal. Do you want to continue?',
+            [
+              { text: 'No', style: 'cancel' },
+              { text: 'Yes', onPress: () => setModalVisible(!modalVisible) },
+            ]
+          );
+        }}
+      >
         <View style={styles.modalOn}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>This is modal...</Text>
+
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
+              onPress={() => setModalVisible(!modalVisible)}
+            >
               <Text style={styles.textStyle}>Close</Text>
             </Pressable>
           </View>
@@ -33,7 +41,7 @@ const App = () => {
         <Text style={styles.textStyle}>Hold 1 second to show modal</Text>
       </Pressable>
     </View>
-    
+
   );
 };
 
@@ -44,7 +52,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
   },
-    modalOn: {
+  modalOn: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
